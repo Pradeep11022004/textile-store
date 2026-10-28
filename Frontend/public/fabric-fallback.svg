@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="Fabric placeholder">
+  <rect width="800" height="600" fill="#EDE4D4"/>
+  <rect x="40" y="40" width="720" height="520" fill="#F7F1E8" stroke="#C4A35A" stroke-width="2"/>
+  <g stroke="#6B1D2A" stroke-width="1" opacity="0.18">
+    <path d="M40 140 H760 M40 240 H760 M40 340 H760 M40 440 H760"/>
+    <path d="M160 40 V560 M280 40 V560 M400 40 V560 M520 40 V560 M640 40 V560"/>
+  </g>
+  <text x="400" y="310" text-anchor="middle" fill="#6B1D2A" font-family="Georgia, serif" font-size="28">Aarohi Textiles</text>
+  <text x="400" y="348" text-anchor="middle" fill="#6B5E54" font-family="Arial, sans-serif" font-size="16">Fabric image unavailable</text>
+</svg>

@@ -1,0 +1,301 @@
+:root {
+  --cream: #f7f1e8;
+  --cream-dark: #ede4d4;
+  --white: #fffdf8;
+  --maroon: #6b1d2a;
+  --maroon-dark: #4a121c;
+  --gold: #c4a35a;
+  --gold-soft: #e8d7a8;
+  --ink: #2c2118;
+  --muted: #6b5e54;
+  --line: #e2d6c4;
+  --in-stock: #215c43;
+  --low-stock: #9a4d12;
+  --out-stock: #8f1d1d;
+  --shadow: 0 12px 30px rgba(74, 18, 28, 0.08);
+  --radius: 16px;
+  --max: 1180px;
+  font-family: Manrope, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin: 0 0 0.4em;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 46px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+.btn--primary {
+  background: var(--maroon);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--maroon-dark);
+}
+
+.btn--light {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 253, 248, 0.55);
+}
+
+.btn--ghost {
+  width: 100%;
+  background: var(--white);
+  color: var(--maroon);
+  border-color: var(--line);
+}
+
+.section {
+  width: min(var(--max), calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.section__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 1.5rem;
+}
+
+.section__header a {
+  color: var(--maroon);
+  font-weight: 700;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+.product-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.product-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.product-card:hover .product-card__media img {
+  transform: scale(1.04);
+}
+
+.product-card__body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.product-card__material,
+.product-card__price {
+  margin: 0;
+}
+
+.product-card__material {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.product-card h3 {
+  font-size: 1.4rem;
+}
+
+.product-card__price {
+  color: var(--maroon);
+  font-weight: 700;
+}
+
+.stock-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.product-card .stock-badge {
+  position: absolute;
+  left: 0.8rem;
+  top: 0.8rem;
+}
+
+.stock-badge--in {
+  background: #e5f4eb;
+  color: var(--in-stock);
+}
+
+.stock-badge--low {
+  background: #f8ead8;
+  color: var(--low-stock);
+}
+
+.stock-badge--out {
+  background: #f8e2e2;
+  color: var(--out-stock);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand strong {
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.3rem;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.brand__mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--maroon);
+  color: var(--gold-soft);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 960px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
